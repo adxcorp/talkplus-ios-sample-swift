@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1946599221972549D8221C7A /* Pods_TalkPlusSampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C4021E6CDFFF031F09E022 /* Pods_TalkPlusSampleSwift.framework */; };
+		CC3453FB25C2AB0C00278AF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3453FA25C2AB0C00278AF1 /* AppDelegate.swift */; };
+		CC34542A25C2ABA000278AF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC34541825C2ABA000278AF1 /* Assets.xcassets */; };
+		CC34542B25C2ABA000278AF1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC34541925C2ABA000278AF1 /* Images.xcassets */; };
+		CC34542C25C2ABA000278AF1 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC34541B25C2ABA000278AF1 /* Date+Extension.swift */; };
+		CC34542D25C2ABA000278AF1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC34541C25C2ABA000278AF1 /* UIViewController+Extension.swift */; };
+		CC34542E25C2ABA000278AF1 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC34541F25C2ABA000278AF1 /* ChannelCell.swift */; };
+		CC34542F25C2ABA000278AF1 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC34542025C2ABA000278AF1 /* MainCell.swift */; };
+		CC34543025C2ABA000278AF1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC34542125C2ABA000278AF1 /* MainViewController.swift */; };
+		CC34543125C2ABA000278AF1 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC34542225C2ABA000278AF1 /* CreateViewController.swift */; };
+		CC34543325C2ABA000278AF1 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC34542425C2ABA000278AF1 /* ChannelViewController.swift */; };
+		CC34543425C2ABA000278AF1 /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC34542525C2ABA000278AF1 /* MemberViewController.swift */; };
+		CC34543525C2ABA000278AF1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC34542625C2ABA000278AF1 /* LoginViewController.swift */; };
+		CC34543625C2ABA000278AF1 /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC34542725C2ABA000278AF1 /* InviteViewController.swift */; };
+		CC34543725C2ABA000278AF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC34542825C2ABA000278AF1 /* LaunchScreen.storyboard */; };
+		CC34544B25C2AC3100278AF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC34544A25C2AC3100278AF1 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		55FA2054A470A7A156515402 /* Pods-TalkPlusSampleSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TalkPlusSampleSwift.release.xcconfig"; path = "Target Support Files/Pods-TalkPlusSampleSwift/Pods-TalkPlusSampleSwift.release.xcconfig"; sourceTree = "<group>"; };
+		91C4021E6CDFFF031F09E022 /* Pods_TalkPlusSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TalkPlusSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC3453F725C2AB0C00278AF1 /* TalkPlusSampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkPlusSampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC3453FA25C2AB0C00278AF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CC34540825C2AB0D00278AF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC34541825C2ABA000278AF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CC34541925C2ABA000278AF1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CC34541B25C2ABA000278AF1 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		CC34541C25C2ABA000278AF1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		CC34541F25C2ABA000278AF1 /* ChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
+		CC34542025C2ABA000278AF1 /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		CC34542125C2ABA000278AF1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CC34542225C2ABA000278AF1 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		CC34542425C2ABA000278AF1 /* ChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
+		CC34542525C2ABA000278AF1 /* MemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
+		CC34542625C2ABA000278AF1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CC34542725C2ABA000278AF1 /* InviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
+		CC34542825C2ABA000278AF1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CC34542925C2ABA000278AF1 /* TalkPlusSampleSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TalkPlusSampleSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		CC34544A25C2AC3100278AF1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F129B6EFC159BD7617567B25 /* Pods-TalkPlusSampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TalkPlusSampleSwift.debug.xcconfig"; path = "Target Support Files/Pods-TalkPlusSampleSwift/Pods-TalkPlusSampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CC3453F425C2AB0C00278AF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1946599221972549D8221C7A /* Pods_TalkPlusSampleSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF1BE73885118190DC83CF71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91C4021E6CDFFF031F09E022 /* Pods_TalkPlusSampleSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC3453EE25C2AB0C00278AF1 = {
+			isa = PBXGroup;
+			children = (
+				CC3453F925C2AB0C00278AF1 /* TalkPlusSampleSwift */,
+				CC3453F825C2AB0C00278AF1 /* Products */,
+				E5A82CCC74C6670964455C3C /* Pods */,
+				BF1BE73885118190DC83CF71 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CC3453F825C2AB0C00278AF1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC3453F725C2AB0C00278AF1 /* TalkPlusSampleSwift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CC3453F925C2AB0C00278AF1 /* TalkPlusSampleSwift */ = {
+			isa = PBXGroup;
+			children = (
+				CC34541725C2ABA000278AF1 /* Resources */,
+				CC34541A25C2ABA000278AF1 /* Extensions */,
+				CC34541D25C2ABA000278AF1 /* Views */,
+				CC3453FA25C2AB0C00278AF1 /* AppDelegate.swift */,
+				CC34543925C2ABA600278AF1 /* Support Files */,
+			);
+			path = TalkPlusSampleSwift;
+			sourceTree = "<group>";
+		};
+		CC34541725C2ABA000278AF1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CC34541825C2ABA000278AF1 /* Assets.xcassets */,
+				CC34541925C2ABA000278AF1 /* Images.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CC34541A25C2ABA000278AF1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CC34541B25C2ABA000278AF1 /* Date+Extension.swift */,
+				CC34541C25C2ABA000278AF1 /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CC34541D25C2ABA000278AF1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC34541E25C2ABA000278AF1 /* Cells */,
+				CC34542625C2ABA000278AF1 /* LoginViewController.swift */,
+				CC34542125C2ABA000278AF1 /* MainViewController.swift */,
+				CC34542425C2ABA000278AF1 /* ChannelViewController.swift */,
+				CC34542525C2ABA000278AF1 /* MemberViewController.swift */,
+				CC34542225C2ABA000278AF1 /* CreateViewController.swift */,
+				CC34542725C2ABA000278AF1 /* InviteViewController.swift */,
+				CC34544A25C2AC3100278AF1 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CC34541E25C2ABA000278AF1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CC34542025C2ABA000278AF1 /* MainCell.swift */,
+				CC34541F25C2ABA000278AF1 /* ChannelCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CC34543925C2ABA600278AF1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CC34542925C2ABA000278AF1 /* TalkPlusSampleSwift-Bridging-Header.h */,
+				CC34542825C2ABA000278AF1 /* LaunchScreen.storyboard */,
+				CC34540825C2AB0D00278AF1 /* Info.plist */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		E5A82CCC74C6670964455C3C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F129B6EFC159BD7617567B25 /* Pods-TalkPlusSampleSwift.debug.xcconfig */,
+				55FA2054A470A7A156515402 /* Pods-TalkPlusSampleSwift.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CC3453F625C2AB0C00278AF1 /* TalkPlusSampleSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC34540B25C2AB0D00278AF1 /* Build configuration list for PBXNativeTarget "TalkPlusSampleSwift" */;
+			buildPhases = (
+				F9AE03B6900E6E333193122D /* [CP] Check Pods Manifest.lock */,
+				CC3453F325C2AB0C00278AF1 /* Sources */,
+				CC3453F425C2AB0C00278AF1 /* Frameworks */,
+				CC3453F525C2AB0C00278AF1 /* Resources */,
+				CBB20F81B18D5CD2D10742C4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TalkPlusSampleSwift;
+			productName = TalkPlusSampleSwift;
+			productReference = CC3453F725C2AB0C00278AF1 /* TalkPlusSampleSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CC3453EF25C2AB0C00278AF1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					CC3453F625C2AB0C00278AF1 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = CC3453F225C2AB0C00278AF1 /* Build configuration list for PBXProject "TalkPlusSampleSwift" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CC3453EE25C2AB0C00278AF1;
+			productRefGroup = CC3453F825C2AB0C00278AF1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CC3453F625C2AB0C00278AF1 /* TalkPlusSampleSwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CC3453F525C2AB0C00278AF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC34542B25C2ABA000278AF1 /* Images.xcassets in Resources */,
+				CC34544B25C2AC3100278AF1 /* Main.storyboard in Resources */,
+				CC34542A25C2ABA000278AF1 /* Assets.xcassets in Resources */,
+				CC34543725C2ABA000278AF1 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CBB20F81B18D5CD2D10742C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TalkPlusSampleSwift/Pods-TalkPlusSampleSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TalkPlusSampleSwift/Pods-TalkPlusSampleSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TalkPlusSampleSwift/Pods-TalkPlusSampleSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9AE03B6900E6E333193122D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TalkPlusSampleSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CC3453F325C2AB0C00278AF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC34543425C2ABA000278AF1 /* MemberViewController.swift in Sources */,
+				CC34542D25C2ABA000278AF1 /* UIViewController+Extension.swift in Sources */,
+				CC34542E25C2ABA000278AF1 /* ChannelCell.swift in Sources */,
+				CC34543625C2ABA000278AF1 /* InviteViewController.swift in Sources */,
+				CC34543125C2ABA000278AF1 /* CreateViewController.swift in Sources */,
+				CC3453FB25C2AB0C00278AF1 /* AppDelegate.swift in Sources */,
+				CC34543025C2ABA000278AF1 /* MainViewController.swift in Sources */,
+				CC34542C25C2ABA000278AF1 /* Date+Extension.swift in Sources */,
+				CC34543325C2ABA000278AF1 /* ChannelViewController.swift in Sources */,
+				CC34543525C2ABA000278AF1 /* LoginViewController.swift in Sources */,
+				CC34542F25C2ABA000278AF1 /* MainCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CC34540925C2AB0D00278AF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "TalkPlusSampleSwift/TalkPlusSampleSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CC34540A25C2AB0D00278AF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "TalkPlusSampleSwift/TalkPlusSampleSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CC34540C25C2AB0D00278AF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F129B6EFC159BD7617567B25 /* Pods-TalkPlusSampleSwift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6V6UAGM9A4;
+				INFOPLIST_FILE = TalkPlusSampleSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.talkplus.sample.swift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CC34540D25C2AB0D00278AF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55FA2054A470A7A156515402 /* Pods-TalkPlusSampleSwift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6V6UAGM9A4;
+				INFOPLIST_FILE = TalkPlusSampleSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.talkplus.sample.swift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CC3453F225C2AB0C00278AF1 /* Build configuration list for PBXProject "TalkPlusSampleSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC34540925C2AB0D00278AF1 /* Debug */,
+				CC34540A25C2AB0D00278AF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC34540B25C2AB0D00278AF1 /* Build configuration list for PBXNativeTarget "TalkPlusSampleSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC34540C25C2AB0D00278AF1 /* Debug */,
+				CC34540D25C2AB0D00278AF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CC3453EF25C2AB0C00278AF1 /* Project object */;
+}
