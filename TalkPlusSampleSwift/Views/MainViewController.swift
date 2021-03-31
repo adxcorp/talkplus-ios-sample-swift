@@ -9,7 +9,7 @@ import UIKit
 
 class MainViewController: UITableViewController {
     private var channels: [TPChannel] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,7 +67,7 @@ class MainViewController: UITableViewController {
         tableView.refreshControl?.endRefreshing()
         
         TalkPlus.sharedInstance()?.getChannelList(nil, success: { [weak self] tpChannels in
-            if let tpChannels = tpChannels as? [TPChannel] {
+            if let tpChannels = tpChannels {
                 if last == nil {
                     self?.channels.removeAll()
                     self?.channels = tpChannels
@@ -90,7 +90,7 @@ class MainViewController: UITableViewController {
     private func joinPublicChannel() {
         let alert = UIAlertController(title: "Join Public Channel", message: nil, preferredStyle: .alert)
         alert.addTextField { $0.placeholder = "Channel ID" }
-
+        
         let actions = [ UIAlertAction(title: "Join", style: .default,
                                       handler: { action in
                                         if let channelId = alert.textFields?.first?.text, !channelId.isEmpty {
@@ -111,7 +111,7 @@ class MainViewController: UITableViewController {
         let alert = UIAlertController(title: "Join invitationCode Channel", message: nil, preferredStyle: .alert)
         alert.addTextField { $0.placeholder = "Channel ID" }
         alert.addTextField { $0.placeholder = "InvitationCode" }
-
+        
         let actions = [ UIAlertAction(title: "Join", style: .default,
                                       handler: { action in
                                         if let channelId = alert.textFields?.first?.text, !channelId.isEmpty,

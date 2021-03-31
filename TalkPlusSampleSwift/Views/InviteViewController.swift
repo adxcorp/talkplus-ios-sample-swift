@@ -56,7 +56,7 @@ class InviteViewController: UITableViewController {
     
     // MARK: - Channel
     func createChannel() {
-        TalkPlus.sharedInstance()?.createChannel(withUserIds: users, channelId: nil, reuseChannel: true, maxCount: 20, hideMessagesBeforeJoin: false, channelType: channelType, channelName: channelName, invitationCode: invitationCode, imageUrl: nil, metaData: nil, success: { [weak self] tpChannel in
+        TalkPlus.sharedInstance()?.createChannel(withUserIds: users, channelId: nil, reuseChannel: true, maxMemberCount: 20, hideMessagesBeforeJoin: false, channelType: channelType, channelName: channelName, invitationCode: invitationCode, imageUrl: nil, metaData: nil, success: { [weak self] tpChannel in
             self?.performSegue(withIdentifier: "UnwindToMain", sender: nil)
             
         }, failure: { (errorCode, error) in

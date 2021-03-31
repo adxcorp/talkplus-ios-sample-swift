@@ -28,7 +28,7 @@ class ChannelViewController: UIViewController {
         textView.layer.cornerRadius = 16
         textView.textContainer.lineFragmentPadding = 10
         sendButton.layer.cornerRadius = sendButton.frame.height / 2
-
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false
         tableView.addGestureRecognizer(tapGesture)
@@ -57,7 +57,7 @@ class ChannelViewController: UIViewController {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         actionSheet.popoverPresentationController?.barButtonItem = sender
         actionSheet.popoverPresentationController?.permittedArrowDirections = .any
- 
+        
         let actions = [
             UIAlertAction(title: "Member Info", style: .default, handler: { [weak self] action in
                 self?.performSegue(withIdentifier: "SegueMember", sender: self?.channel?.getMembers())
@@ -94,14 +94,10 @@ class ChannelViewController: UIViewController {
         guard let channel = channel else { return }
         
         TalkPlus.sharedInstance()?.getMessageList(channel, last: message, success: { [weak self] tpMessages in
-            if let tpMessages = tpMessages as? [TPMessage] {
-                self?.messages = tpMessages.reversed()
-            }
-            
-            let count = self?.messages.count ?? 0
-            if count > 0 {
+            if let tpMessages = tpMessages, tpMessages.count > 0 {
+                self?.messages = tpMessages.reversed();
                 self?.tableView.reloadData()
-                self?.tableView.scrollToRow(at: IndexPath(row: count - 1, section: 0), at: .bottom, animated: false)
+                self?.tableView.scrollToRow(at: IndexPath(row: tpMessages.count - 1, section: 0), at: .bottom, animated: false)
             }
             
         }, failure: { (errorCode, error) in
@@ -187,10 +183,10 @@ class ChannelViewController: UIViewController {
 
 // MARK: - TPChannelDelegate
 extension ChannelViewController: TPChannelDelegate {
-    func memberAdded(_ tpChannel: TPChannel!, users: [Any]!) {
+    func memberAdded(_ tpChannel: TPChannel!, users: [TPUser]!) {
     }
     
-    func memberLeft(_ tpChannel: TPChannel!, users: [Any]!) {
+    func memberLeft(_ tpChannel: TPChannel!, users: [TPUser]!) {
     }
     
     func messageReceived(_ tpChannel: TPChannel!, message tpMessage: TPMessage!) {
@@ -202,10 +198,16 @@ extension ChannelViewController: TPChannelDelegate {
         }
     }
     
+    func channelAdded(_ tpChannel: TPChannel!) {
+    }
+    
     func channelChanged(_ tpChannel: TPChannel!) {
         if channel?.getId() == tpChannel.getId() {
             self.channel = tpChannel
         }
+    }
+    
+    func channelRemoved(_ tpChannel: TPChannel!) {
     }
 }
 

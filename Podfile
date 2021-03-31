@@ -3,7 +3,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'TalkPlusSampleSwift' do
-  pod 'talkplus-ios'
+  pod 'talkplus-ios', '0.1.0'
 
 end
 
