@@ -39,6 +39,8 @@ class LoginViewController: UIViewController {
                                             guard let tpUser = tpUser, let userId = tpUser.getId(),
                                                   let userName = tpUser.getUsername() else { return }
                                             
+                                            PushManager.shared.registerFCMToken();
+                                            
                                             UserDefaults.standard.set(userId, forKey: "KeyUserID")
                                             UserDefaults.standard.set(userName, forKey: "KeyUserName")
                                             UserDefaults.standard.synchronize()

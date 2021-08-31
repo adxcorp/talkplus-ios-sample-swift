@@ -23,6 +23,8 @@
 		CC34543625C2ABA000278AF1 /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC34542725C2ABA000278AF1 /* InviteViewController.swift */; };
 		CC34543725C2ABA000278AF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC34542825C2ABA000278AF1 /* LaunchScreen.storyboard */; };
 		CC34544B25C2AC3100278AF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC34544A25C2AC3100278AF1 /* Main.storyboard */; };
+		CC6185A226DE1BBC0069E066 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC6185A126DE1BBC0069E066 /* GoogleService-Info.plist */; };
+		CCC17E9226C0BDEB00CFB1E2 /* PushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC17E9126C0BDEB00CFB1E2 /* PushManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,9 @@
 		CC34542825C2ABA000278AF1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC34542925C2ABA000278AF1 /* TalkPlusSampleSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TalkPlusSampleSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		CC34544A25C2AC3100278AF1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CC6185A126DE1BBC0069E066 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CCC17E9126C0BDEB00CFB1E2 /* PushManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushManager.swift; sourceTree = "<group>"; };
+		CCC17E9326C0BE1D00CFB1E2 /* TalkPlusSampleSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TalkPlusSampleSwift.entitlements; sourceTree = "<group>"; };
 		F129B6EFC159BD7617567B25 /* Pods-TalkPlusSampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TalkPlusSampleSwift.debug.xcconfig"; path = "Target Support Files/Pods-TalkPlusSampleSwift/Pods-TalkPlusSampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				CC34541725C2ABA000278AF1 /* Resources */,
+				CCC17E9026C0BDDD00CFB1E2 /* Manager */,
 				CC34541A25C2ABA000278AF1 /* Extensions */,
 				CC34541D25C2ABA000278AF1 /* Views */,
 				CC3453FA25C2AB0C00278AF1 /* AppDelegate.swift */,
@@ -144,11 +150,21 @@
 		CC34543925C2ABA600278AF1 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				CCC17E9326C0BE1D00CFB1E2 /* TalkPlusSampleSwift.entitlements */,
+				CC6185A126DE1BBC0069E066 /* GoogleService-Info.plist */,
 				CC34542925C2ABA000278AF1 /* TalkPlusSampleSwift-Bridging-Header.h */,
 				CC34542825C2ABA000278AF1 /* LaunchScreen.storyboard */,
 				CC34540825C2AB0D00278AF1 /* Info.plist */,
 			);
 			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		CCC17E9026C0BDDD00CFB1E2 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				CCC17E9126C0BDEB00CFB1E2 /* PushManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		E5A82CCC74C6670964455C3C /* Pods */ = {
@@ -221,6 +237,7 @@
 			files = (
 				CC34542B25C2ABA000278AF1 /* Images.xcassets in Resources */,
 				CC34544B25C2AC3100278AF1 /* Main.storyboard in Resources */,
+				CC6185A226DE1BBC0069E066 /* GoogleService-Info.plist in Resources */,
 				CC34542A25C2ABA000278AF1 /* Assets.xcassets in Resources */,
 				CC34543725C2ABA000278AF1 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -278,6 +295,7 @@
 				CC34543425C2ABA000278AF1 /* MemberViewController.swift in Sources */,
 				CC34542D25C2ABA000278AF1 /* UIViewController+Extension.swift in Sources */,
 				CC34542E25C2ABA000278AF1 /* ChannelCell.swift in Sources */,
+				CCC17E9226C0BDEB00CFB1E2 /* PushManager.swift in Sources */,
 				CC34543625C2ABA000278AF1 /* InviteViewController.swift in Sources */,
 				CC34543125C2ABA000278AF1 /* CreateViewController.swift in Sources */,
 				CC3453FB25C2AB0C00278AF1 /* AppDelegate.swift in Sources */,
@@ -416,6 +434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TalkPlusSampleSwift/TalkPlusSampleSwift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6V6UAGM9A4;
 				INFOPLIST_FILE = TalkPlusSampleSwift/Info.plist;
@@ -423,7 +442,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.talkplus.sample.swift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.talkplus.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -436,6 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TalkPlusSampleSwift/TalkPlusSampleSwift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6V6UAGM9A4;
 				INFOPLIST_FILE = TalkPlusSampleSwift/Info.plist;
@@ -443,7 +463,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.talkplus.sample.swift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.talkplus.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

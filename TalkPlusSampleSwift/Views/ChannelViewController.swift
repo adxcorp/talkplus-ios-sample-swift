@@ -209,6 +209,21 @@ extension ChannelViewController: TPChannelDelegate {
     
     func channelRemoved(_ tpChannel: TPChannel!) {
     }
+    
+    func publicMemberAdded(_ tpChannel: TPChannel!, users: [TPUser]!) {
+    }
+    
+    func publicMemberLeft(_ tpChannel: TPChannel!, users: [TPUser]!) {
+    }
+    
+    func publicChannelAdded(_ tpChannel: TPChannel!) {
+    }
+    
+    func publicChannelChanged(_ tpChannel: TPChannel!) {
+    }
+    
+    func publicChannelRemoved(_ tpChannel: TPChannel!) {
+    }
 }
 
 // MARK: - UITableViewDataSource
