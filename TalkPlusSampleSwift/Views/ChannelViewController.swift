@@ -9,6 +9,7 @@ import UIKit
 
 class ChannelViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var bottomView: UIView!
@@ -23,6 +24,8 @@ class ChannelViewController: UIViewController {
         navigationItem.title = "Channel"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_more"), style: .plain, target: self, action: #selector(channelAction(_:)))
         
+        addButton.layer.borderWidth = 0.5
+        addButton.layer.borderColor = UIColor.gray.withAlphaComponent(0.5).cgColor
         textView.layer.borderWidth = 0.5
         textView.layer.borderColor = UIColor.gray.withAlphaComponent(0.5).cgColor
         textView.layer.cornerRadius = 16
@@ -80,6 +83,39 @@ class ChannelViewController: UIViewController {
         sendMessage()
     }
     
+    @IBAction func sendImageAction(_ sender: UIButton) {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        actionSheet.popoverPresentationController?.sourceView = sender
+        actionSheet.popoverPresentationController?.permittedArrowDirections = .any
+        
+        let actions = [
+            UIAlertAction(title: "Talk Photo", style: .default, handler: { [weak self] action in
+                self?.showImagePicker(sourceType: .camera)
+            }),
+            UIAlertAction(title: "Photo Library", style: .default, handler: { [weak self] action in
+                self?.showImagePicker(sourceType: .photoLibrary)
+            }),
+            UIAlertAction(title: "Cancel", style: .cancel, handler: nil) ]
+        actions.forEach { actionSheet.addAction($0) }
+        
+        present(actionSheet, animated: true)
+    }
+    
+    private func showImagePicker(sourceType: UIImagePickerController.SourceType) {
+        ImagePickerManager.shared.show(self, sourceType: sourceType) {  [weak self] image, path in
+            if let path = path {
+                let text = self?.textView.text
+                TalkPlus.sharedInstance()?.sendFileMessage(self?.channel, text: text, type: TP_MESSAGE_TYPE_TEXT, metaData: nil, filePath: path) { [weak self] tpMessage in
+                    if let tpMessage = tpMessage {
+                        self?.addMessage(tpMessage)
+                        self?.textView.text = nil
+                    }
+                } failure: { (errorCode, error) in
+                }
+            }
+        }
+    }
+    
     // MARK: - Message
     private func markRead() {
         TalkPlus.sharedInstance()?.mark(asRead: channel, success: { [weak self] tpChannel in
@@ -101,7 +137,6 @@ class ChannelViewController: UIViewController {
             }
             
         }, failure: { (errorCode, error) in
-            
         })
     }
     
@@ -110,13 +145,13 @@ class ChannelViewController: UIViewController {
         
         TalkPlus.sharedInstance()?.sendMessage(channel, text: text, type: TP_MESSAGE_TYPE_TEXT, metaData: nil,
                                                success: { [weak self] tpMessage in
-                                                if let tpMessage = tpMessage {
-                                                    self?.addMessage(tpMessage)
-                                                    self?.textView.text = nil
-                                                }
-                                               }, failure: { (errorCode, error) in
-                                                
-                                               })
+            if let tpMessage = tpMessage {
+                self?.addMessage(tpMessage)
+                self?.textView.text = nil
+            }
+        }, failure: { (errorCode, error) in
+            
+        })
     }
     
     private func addMessage(_ message: TPMessage) {
@@ -184,12 +219,16 @@ class ChannelViewController: UIViewController {
 // MARK: - TPChannelDelegate
 extension ChannelViewController: TPChannelDelegate {
     func memberAdded(_ tpChannel: TPChannel!, users: [TPUser]!) {
+        print("memberAdded")
     }
     
     func memberLeft(_ tpChannel: TPChannel!, users: [TPUser]!) {
+        print("memberLeft")
     }
     
     func messageReceived(_ tpChannel: TPChannel!, message tpMessage: TPMessage!) {
+        print("messageReceived")
+        
         if channel?.getId() == tpChannel.getId() {
             self.channel = tpChannel
             
@@ -199,30 +238,38 @@ extension ChannelViewController: TPChannelDelegate {
     }
     
     func channelAdded(_ tpChannel: TPChannel!) {
+        print("channelAdded")
     }
     
     func channelChanged(_ tpChannel: TPChannel!) {
+        print("channelChanged")
         if channel?.getId() == tpChannel.getId() {
             self.channel = tpChannel
         }
     }
     
     func channelRemoved(_ tpChannel: TPChannel!) {
+        print("channelRemoved")
     }
     
     func publicMemberAdded(_ tpChannel: TPChannel!, users: [TPUser]!) {
+        print("publicMemberAdded")
     }
     
     func publicMemberLeft(_ tpChannel: TPChannel!, users: [TPUser]!) {
+        print("publicMemberLeft")
     }
     
     func publicChannelAdded(_ tpChannel: TPChannel!) {
+        print("publicChannelAdded")
     }
     
     func publicChannelChanged(_ tpChannel: TPChannel!) {
+        print("publicChannelChanged")
     }
     
     func publicChannelRemoved(_ tpChannel: TPChannel!) {
+        print("publicChannelRemoved")
     }
 }
 
@@ -257,6 +304,16 @@ extension ChannelViewController: UITableViewDataSource {
             
         } else {
             cell.unreadCountLabel.text = nil
+        }
+        
+        if let imageURLString = message.getFileUrl(), let url = URL(string: imageURLString) {
+            let data = try! Data(contentsOf: url)
+            cell.messageImageView.isHidden = false
+            cell.messageImageView.image = UIImage(data: data)
+            
+        } else {
+            cell.messageImageView.image = nil
+            cell.messageImageView.isHidden = true
         }
         
         return cell
