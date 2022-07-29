@@ -7,6 +7,7 @@
 
 import Firebase
 import FirebaseMessaging
+import TalkPlus
 
 class PushManager: NSObject {
     static let shared = PushManager()

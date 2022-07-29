@@ -47,7 +47,6 @@
 		CC34542625C2ABA000278AF1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CC34542725C2ABA000278AF1 /* InviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
 		CC34542825C2ABA000278AF1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CC34542925C2ABA000278AF1 /* TalkPlusSampleSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TalkPlusSampleSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		CC34544A25C2AC3100278AF1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CCC17E9126C0BDEB00CFB1E2 /* PushManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushManager.swift; sourceTree = "<group>"; };
 		CCC17E9326C0BE1D00CFB1E2 /* TalkPlusSampleSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TalkPlusSampleSwift.entitlements; sourceTree = "<group>"; };
@@ -152,7 +151,6 @@
 			children = (
 				CC34540825C2AB0D00278AF1 /* Info.plist */,
 				CC34542825C2ABA000278AF1 /* LaunchScreen.storyboard */,
-				CC34542925C2ABA000278AF1 /* TalkPlusSampleSwift-Bridging-Header.h */,
 				CCC17E9326C0BE1D00CFB1E2 /* TalkPlusSampleSwift.entitlements */,
 			);
 			name = "Support Files";
@@ -367,7 +365,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OBJC_BRIDGING_HEADER = "TalkPlusSampleSwift/TalkPlusSampleSwift-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -422,7 +420,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OBJC_BRIDGING_HEADER = "TalkPlusSampleSwift/TalkPlusSampleSwift-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -444,6 +442,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.talkplus.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -465,6 +464,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.talkplus.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

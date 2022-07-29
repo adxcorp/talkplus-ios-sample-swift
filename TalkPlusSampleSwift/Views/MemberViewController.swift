@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TalkPlus
 
 class MemberViewController: UITableViewController {
     var channel: TPChannel?

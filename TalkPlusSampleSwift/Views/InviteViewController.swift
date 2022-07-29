@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TalkPlus
 
 class InviteViewController: UITableViewController {
     var channelType = ""

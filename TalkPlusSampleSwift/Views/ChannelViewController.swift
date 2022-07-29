@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TalkPlus
 
 class ChannelViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!

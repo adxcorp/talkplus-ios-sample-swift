@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TalkPlus
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

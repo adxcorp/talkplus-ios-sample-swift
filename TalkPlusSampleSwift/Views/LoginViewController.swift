@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TalkPlus
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var userIdTextField: UITextField!

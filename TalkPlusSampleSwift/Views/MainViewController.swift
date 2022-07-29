@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TalkPlus
 
 class MainViewController: UITableViewController {
     private var channels: [TPChannel] = []
