@@ -106,7 +106,13 @@ class ChannelViewController: UIViewController {
         ImagePickerManager.shared.show(self, sourceType: sourceType) {  [weak self] image, path in
             if let path = path {
                 let text = self?.textView.text
-                TalkPlus.sharedInstance()?.sendFileMessage(self?.channel, text: text, type: TP_MESSAGE_TYPE_TEXT, metaData: nil, filePath: path) { [weak self] tpMessage in
+                TalkPlus.sharedInstance()?.sendFileMessage(self?.channel, 
+                                                           text: text,
+                                                           type: TP_MESSAGE_TYPE_TEXT,
+                                                           mentions: [],
+                                                           parentMessageId: "",
+                                                           metaData: nil,
+                                                           filePath: path) { [weak self] tpMessage in
                     if let tpMessage = tpMessage {
                         self?.addMessage(tpMessage)
                         self?.textView.text = nil
@@ -144,7 +150,12 @@ class ChannelViewController: UIViewController {
     private func sendMessage() {
         guard let channel = channel, let text = textView.text, !text.isEmpty else { return }
         
-        TalkPlus.sharedInstance()?.sendMessage(channel, text: text, type: TP_MESSAGE_TYPE_TEXT, metaData: nil,
+        TalkPlus.sharedInstance()?.sendMessage(channel, 
+                                               text: text,
+                                               type: TP_MESSAGE_TYPE_TEXT,
+                                               mentions: [],
+                                               parentMessageId: "",
+                                               metaData: nil,
                                                success: { [weak self] tpMessage in
             if let tpMessage = tpMessage {
                 self?.addMessage(tpMessage)
@@ -219,45 +230,32 @@ class ChannelViewController: UIViewController {
 
 // MARK: - TPChannelDelegate
 extension ChannelViewController: TPChannelDelegate {
-    func memberAdded(_ tpChannel: TPChannel!, users: [TPUser]!) {
+    
+    func memberAdded(_ tpChannel: TPChannel!, users: [TPMember]!) {
         print("memberAdded")
     }
     
-    func memberLeft(_ tpChannel: TPChannel!, users: [TPUser]!) {
+    func memberLeft(_ tpChannel: TPChannel!, users: [TPMember]!) {
         print("memberLeft")
     }
     
-    func messageReceived(_ tpChannel: TPChannel!, message tpMessage: TPMessage!) {
-        print("messageReceived")
-        
-        if channel?.getId() == tpChannel.getId() {
-            self.channel = tpChannel
-            
-            addMessage(tpMessage)
-            markRead()
-        }
+    func messageDeleted(_ tpChannel: TPChannel!, message tpMessage: TPMessage!) {
+        print("messageDeleted")
     }
     
     func channelAdded(_ tpChannel: TPChannel!) {
         print("channelAdded")
     }
     
-    func channelChanged(_ tpChannel: TPChannel!) {
-        print("channelChanged")
-        if channel?.getId() == tpChannel.getId() {
-            self.channel = tpChannel
-        }
-    }
-    
     func channelRemoved(_ tpChannel: TPChannel!) {
         print("channelRemoved")
     }
     
-    func publicMemberAdded(_ tpChannel: TPChannel!, users: [TPUser]!) {
+    func publicMemberAdded(_ tpChannel: TPChannel!, users: [TPMember]!) {
         print("publicMemberAdded")
     }
     
-    func publicMemberLeft(_ tpChannel: TPChannel!, users: [TPUser]!) {
+    func publicMemberLeft(_ tpChannel: TPChannel!, users: [TPMember]!) {
         print("publicMemberLeft")
     }
     
@@ -272,6 +270,23 @@ extension ChannelViewController: TPChannelDelegate {
     func publicChannelRemoved(_ tpChannel: TPChannel!) {
         print("publicChannelRemoved")
     }
+    
+    func messageReceived(_ tpChannel: TPChannel!, message tpMessage: TPMessage!) {
+        print("messageReceived")
+        if channel?.getId() == tpChannel.getId() {
+            self.channel = tpChannel
+            addMessage(tpMessage)
+            markRead()
+        }
+    }
+    
+    func channelChanged(_ tpChannel: TPChannel!) {
+        print("channelChanged")
+        if channel?.getId() == tpChannel.getId() {
+            self.channel = tpChannel
+        }
+    }
+
 }
 
 // MARK: - UITableViewDataSource
