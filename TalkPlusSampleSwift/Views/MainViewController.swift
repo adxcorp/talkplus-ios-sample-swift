@@ -23,7 +23,7 @@ class MainViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        channelList()
+        channelList(last: nil)
     }
     
     // MARK: - Action
@@ -64,28 +64,26 @@ class MainViewController: UITableViewController {
     }
     
     // MARK: - Channel
-    private func channelList(last: TPChannel? = nil) {
+    private func channelList(last: TPChannel?) {
         tableView.refreshControl?.endRefreshing()
-        
-        TalkPlus.sharedInstance()?.getChannelList(nil, success: { [weak self] tpChannels in
-            if let tpChannels = tpChannels {
-                if last == nil {
-                    self?.channels.removeAll()
-                    self?.channels = tpChannels
-                    
-                } else {
-                    self?.channels.append(contentsOf: tpChannels)
-                }
-                
-                self?.tableView.reloadData()
+        if last == nil {
+            self.channels = []
+        }
+        /// 현재 참여중인 채널 목록 조회
+        TalkPlus.sharedInstance()?.getChannels(last, success: { [weak self] tpChannels, hasNext in
+            self?.channels.append(contentsOf: tpChannels!)
+            if hasNext {
+                self?.channelList(last: tpChannels!.last)
+                return
             }
-            
+            self?.tableView.reloadData()
         }, failure: { (errorCode, error) in
+            print("getChannels failed, \(errorCode)")
         })
     }
     
     @objc private func reloadChannelList() {
-        channelList()
+        channelList(last: nil)
     }
     
     private func joinPublicChannel() {

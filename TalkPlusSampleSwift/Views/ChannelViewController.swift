@@ -134,16 +134,29 @@ class ChannelViewController: UIViewController {
     }
     
     private func messageList(_ message: TPMessage? = nil) {
-        guard let channel = channel else { return }
+        if(self.messages.count == 0) { self.messages = []; }
         
-        TalkPlus.sharedInstance()?.getMessageList(channel, last: message, success: { [weak self] tpMessages in
-            if let tpMessages = tpMessages, tpMessages.count > 0 {
-                self?.messages = tpMessages.reversed();
-                self?.tableView.reloadData()
-                self?.tableView.scrollToRow(at: IndexPath(row: tpMessages.count - 1, section: 0), at: .bottom, animated: false)
+        guard let channel = channel else { return }
+        TalkPlus.sharedInstance()?.getMessages(channel,
+                                               last: message,
+                                               success: { [weak self] tpMessages, hasNext in
+            guard let strongSelf = self, let tpMessages = tpMessages else { return }
+            if tpMessages.count > 0 {
+                strongSelf.messages.append(contentsOf: tpMessages)
             }
-            
+            // 메시지 더 이상 없음
+            if hasNext == false {
+                // 채널 내 메시지 목록을 조회. ( 마지막 수신 시간을 기준으로 정렬)
+                strongSelf.messages = strongSelf.messages.reversed();
+                strongSelf.tableView.reloadData()
+                let lastIndexPath = IndexPath(row: strongSelf.messages.count - 1, section: 0)
+                strongSelf.tableView.scrollToRow(at: lastIndexPath, at: .bottom, animated: false)
+                return
+            }
+            // 메시지 남아 있음 (재귀 호출)
+            strongSelf.messageList(tpMessages.last)
         }, failure: { (errorCode, error) in
+            print("getMessages failed, \(errorCode)")
         })
     }
     
