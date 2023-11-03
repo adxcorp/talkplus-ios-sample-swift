@@ -3,7 +3,7 @@ platform :ios, '12.0'
 use_frameworks!
 
 target 'TalkPlusSampleSwift' do
-  pod 'talkplus-ios', '0.4.5'
+  pod 'talkplus-ios', '0.4.6'
   pod 'Firebase/Messaging'
 end
 
