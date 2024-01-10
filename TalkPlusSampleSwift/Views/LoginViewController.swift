@@ -35,21 +35,23 @@ class LoginViewController: UIViewController {
               let userName = nicknameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
               !userId.isEmpty, !userName.isEmpty else { return }
 
-        TalkPlus.sharedInstance()?.login(withAnonymous: userId, username: userName, profileImageUrl: nil, metaData: nil,
-                                         success: { [weak self] tpUser in
-                                            guard let tpUser = tpUser, let userId = tpUser.getId(),
-                                                  let userName = tpUser.getUsername() else { return }
-                                            
-                                            PushManager.shared.registerFCMToken();
-                                            
-                                            UserDefaults.standard.set(userId, forKey: "KeyUserID")
-                                            UserDefaults.standard.set(userName, forKey: "KeyUserName")
-                                            UserDefaults.standard.synchronize()
-                                            
-                                            self?.performSegue(withIdentifier: "SegueMain", sender: nil)
-
-                                         }, failure: { [weak self] (errorCode, error) in
-                                            self?.showToast("로그인에 실패하였습니다")
-                                         })
+        let params = TPLoginParams(loginType: .anonymous, userId: userId)
+        params?.userName = userName
+        
+        TalkPlus.sharedInstance()?.login(params, success: { [weak self] tpUser in
+            guard let tpUser = tpUser, let userId = tpUser.getId(),
+                  let userName = tpUser.getUsername() else { return }
+            
+            PushManager.shared.registerFCMToken();
+            
+            UserDefaults.standard.set(userId, forKey: "KeyUserID")
+            UserDefaults.standard.set(userName, forKey: "KeyUserName")
+            UserDefaults.standard.synchronize()
+            
+            self?.performSegue(withIdentifier: "SegueMain", sender: nil)
+            
+        }, failure: { [weak self] (errorCode, error) in
+            self?.showToast("로그인에 실패하였습니다")
+        })
     }
 }

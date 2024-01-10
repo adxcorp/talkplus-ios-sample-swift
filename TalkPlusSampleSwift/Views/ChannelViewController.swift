@@ -106,13 +106,12 @@ class ChannelViewController: UIViewController {
         ImagePickerManager.shared.show(self, sourceType: sourceType) {  [weak self] image, path in
             if let path = path {
                 let text = self?.textView.text
-                TalkPlus.sharedInstance()?.sendFileMessage(self?.channel, 
-                                                           text: text,
-                                                           type: TP_MESSAGE_TYPE_TEXT,
-                                                           mentions: [],
-                                                           parentMessageId: "",
-                                                           metaData: nil,
-                                                           filePath: path) { [weak self] tpMessage in
+                
+                let params = TPMessageSendParams(contentType: .file, messageType: .text, channel: self?.channel)
+                params?.textMessage = text
+                params?.filePath = path
+                
+                TalkPlus.sharedInstance()?.sendMessage(params) { [weak self] tpMessage in
                     if let tpMessage = tpMessage {
                         self?.addMessage(tpMessage)
                         self?.textView.text = nil
@@ -137,9 +136,11 @@ class ChannelViewController: UIViewController {
         if(self.messages.count == 0) { self.messages = []; }
         
         guard let channel = channel else { return }
-        TalkPlus.sharedInstance()?.getMessages(channel,
-                                               last: message,
-                                               success: { [weak self] tpMessages, hasNext in
+        
+        let params = TPMessageRetrievalParams(channel: channel)
+        params?.lastMessage = message
+        
+        TalkPlus.sharedInstance()?.getMessages(params, success: { [weak self] tpMessages, hasNext in
             guard let strongSelf = self, let tpMessages = tpMessages else { return }
             if tpMessages.count > 0 {
                 strongSelf.messages.append(contentsOf: tpMessages)
@@ -163,13 +164,10 @@ class ChannelViewController: UIViewController {
     private func sendMessage() {
         guard let channel = channel, let text = textView.text, !text.isEmpty else { return }
         
-        TalkPlus.sharedInstance()?.sendMessage(channel, 
-                                               text: text,
-                                               type: TP_MESSAGE_TYPE_TEXT,
-                                               mentions: [],
-                                               parentMessageId: "",
-                                               metaData: nil,
-                                               success: { [weak self] tpMessage in
+        let params = TPMessageSendParams(contentType: .text, messageType: .text, channel: channel)
+        params?.textMessage = text
+        
+        TalkPlus.sharedInstance()?.sendMessage(params, success: { [weak self] tpMessage in
             if let tpMessage = tpMessage {
                 self?.addMessage(tpMessage)
                 self?.textView.text = nil
