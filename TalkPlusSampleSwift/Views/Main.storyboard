@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -102,7 +102,7 @@
                 <navigationController id="FyJ-dp-gg5" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="bhJ-CI-vBK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YKa-gA-Enz">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
@@ -124,7 +124,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainCell" id="Jtw-gV-8ei" customClass="MainCell" customModule="TalkPlusSampleSwift" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="49.5" width="414" height="58"/>
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jtw-gV-8ei" id="oYA-Ae-NEI">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
@@ -220,11 +220,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m87-C5-34m">
-                                <rect key="frame" x="0.0" y="88" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="800"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChannelCell" rowHeight="150" id="IwQ-E4-sXF" customClass="ChannelCell" customModule="TalkPlusSampleSwift" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IwQ-E4-sXF" id="WZM-hl-hr9">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -290,7 +290,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChannelUserCell" rowHeight="150" id="sSI-yP-LV0" customClass="ChannelCell" customModule="TalkPlusSampleSwift" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="194.5" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="200" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sSI-yP-LV0" id="RMC-1t-5as">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -381,7 +381,7 @@
                                 </connections>
                             </tableView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBP-rj-YZA">
-                                <rect key="frame" x="0.0" y="810" width="414" height="86"/>
+                                <rect key="frame" x="0.0" y="844" width="414" height="52"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UnD-Tg-tGK" userLabel="Line">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.5"/>
@@ -456,7 +456,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0p2-nd-BdH" firstAttribute="trailing" secondItem="dBP-rj-YZA" secondAttribute="trailing" id="6jT-0X-ccc"/>
-                            <constraint firstAttribute="bottom" secondItem="dBP-rj-YZA" secondAttribute="bottom" id="7pK-6O-KQ9"/>
+                            <constraint firstItem="0p2-nd-BdH" firstAttribute="bottom" secondItem="dBP-rj-YZA" secondAttribute="bottom" id="7pK-6O-KQ9"/>
                             <constraint firstItem="dBP-rj-YZA" firstAttribute="top" secondItem="m87-C5-34m" secondAttribute="bottom" id="Fa2-JJ-b7j"/>
                             <constraint firstItem="m87-C5-34m" firstAttribute="top" secondItem="0p2-nd-BdH" secondAttribute="top" id="L5b-0M-V1f"/>
                             <constraint firstItem="0p2-nd-BdH" firstAttribute="trailing" secondItem="m87-C5-34m" secondAttribute="trailing" id="c70-9G-BoM"/>
@@ -488,7 +488,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="skR-GT-zJI" style="IBUITableViewCellStyleDefault" id="fl6-H7-dsp">
-                                <rect key="frame" x="0.0" y="49.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fl6-H7-dsp" id="rEk-qh-aiI">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -538,11 +538,11 @@
             <objects>
                 <viewController id="v3l-sB-jmg" customClass="CreateViewController" customModule="TalkPlusSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DoX-Ye-cLd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jcJ-gr-SOy">
-                                <rect key="frame" x="30" y="118" width="354" height="187"/>
+                                <rect key="frame" x="30" y="129" width="354" height="187"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Private Channel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7i-qX-86W">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="29"/>
@@ -609,12 +609,12 @@
             <objects>
                 <tableViewController id="vBu-Ur-Iw1" customClass="InviteViewController" customModule="TalkPlusSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Yc0-nH-jfk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="jLh-pQ-l8v" style="IBUITableViewCellStyleDefault" id="B1N-oa-BMN">
-                                <rect key="frame" x="0.0" y="49.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B1N-oa-BMN" id="BV1-Br-UDZ">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
