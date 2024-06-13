@@ -145,17 +145,20 @@ class ChannelViewController: UIViewController {
             if tpMessages.count > 0 {
                 strongSelf.messages.append(contentsOf: tpMessages)
             }
-            // 메시지 더 이상 없음
-            if hasNext == false {
-                // 채널 내 메시지 목록을 조회. ( 마지막 수신 시간을 기준으로 정렬)
-                strongSelf.messages = strongSelf.messages.reversed();
-                strongSelf.tableView.reloadData()
-                let lastIndexPath = IndexPath(row: strongSelf.messages.count - 1, section: 0)
-                strongSelf.tableView.scrollToRow(at: lastIndexPath, at: .bottom, animated: false)
+            
+            /*
+            if hasNext {
+                strongSelf.messageList(tpMessages.last)
                 return
             }
-            // 메시지 남아 있음 (재귀 호출)
-            strongSelf.messageList(tpMessages.last)
+             */
+            
+            // 채널 내 메시지 목록을 조회. ( 마지막 수신 시간을 기준으로 정렬)
+            strongSelf.messages = strongSelf.messages.reversed();
+            strongSelf.tableView.reloadData()
+            let lastIndexPath = IndexPath(row: strongSelf.messages.count - 1, section: 0)
+            strongSelf.tableView.scrollToRow(at: lastIndexPath, at: .bottom, animated: false)
+            
         }, failure: { (errorCode, error) in
             print("getMessages failed, \(errorCode)")
         })
